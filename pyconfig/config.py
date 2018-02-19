@@ -20,7 +20,8 @@ class Config:
             name = filename[:filename.find('.json')]
             if name in self.data:
                 name = name + '.json'
-            data = json.loads(open(dir + '/' + filename).read())
+            with open(dir + '/' + filename) as file:
+                data = json.loads(file.read())
             self.loadData(name, data)
         def loadYAML(self, dir, filename):
             if '.yaml' in filename:
@@ -29,7 +30,8 @@ class Config:
                 name = filename[:filename.find('.yml')]
             if name in self.data:
                 name = name + '.yaml'
-            data = yaml.load(open(dir + '/' + filename).read())
+            with open(dir + '/' + filename) as file:
+                data = yaml.load(file.read())
             self.loadData(name, data)
         def loadData(self, name, data):
             if name != '':
