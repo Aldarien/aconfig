@@ -10,5 +10,5 @@ setup(name='aconfig',
       packages=['pyconfig'],
       zip_safe=False,
       install_requires=[
-          "pyyaml>=3.0, <4.0"
+          "pyyaml>=3.0, <6.0"
           ])
